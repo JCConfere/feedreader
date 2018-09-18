@@ -118,7 +118,8 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-         it('changes content', function() {
+         it('changes content', function(done) {
+           let newFeedSelection = document.querySelector('.feed').innerHTML;
            expect(feed).not.toBe(newFeedSelection);
            done();
          });
