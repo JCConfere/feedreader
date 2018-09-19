@@ -78,7 +78,7 @@ $(function() {
          */
          it('has <= 1 feed when called', function() {
            let feed = document.querySelector('.feed')
-           expect(feed.children.length > 0).toBe(true);
+           expect(feed.children.length > 0).has('.entry' > 0).toBe(true);
          })
 
         });
@@ -87,11 +87,14 @@ $(function() {
       describe('New Feed Selection', function() {
         let feed = document.querySelector('.feed').innerHTML;
         beforeEach(function(done) {
-          loadFeed(0, function() {
-            loadFeed(1, function() {
+          loadFeed(1, function() {
+            loadFeed(2, function() {
               done();
             });
           });
+        });
+        afterEach(function() {
+          loadFeed(0);
         });
 
         /* Ensures when a new feed is loaded by the loadFeed
@@ -99,9 +102,10 @@ $(function() {
          */
 
          it('changes content', function(done) {
-           let newFeedSelection = document.querySelector('.feed').innerHTML;
-           expect(feed).not.toBe(newFeedSelection);
-           done();
+           expect(feed).toBeDefined
+           let feedTwo = document.querySelector('.feed');
+           expect(feedTwo).toBeDefined();
+           expect(feed).not.toEqual(feedTwo);
          });
 
 

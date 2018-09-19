@@ -1,8 +1,10 @@
 Let's get started!  On the right hand side of the repository, you will find a button
-that will allow you to clone or download this repo to your computer.  Once you have done so,
-open the folder where you saved the repository, and look for the file named index.html.
+that will allow you to clone or download this repo to your computer. Once you have it saved to your computer, we will be able to perform a number of actions that will allow you to explore the files and see behind the scenes and get a better idea of how Jasmine works.
 
-Once you have located this file, you will want to right click on index.html and look for the option that is called, "open with".  Whenever you highlight this option, you will be given the
-opportunity to open index.html in the browser of your own choice.  Once you have opened the file, you will see the feed reader, and if you scroll to the very bottom of the page, you will see the
+Welcome to the feedreader testing project.  The purpose of this program is to showcase the use of the Jasmine testing framework. Jasmine is used to write programmatic tests that allow you to follow the red, green, refactor paradigm. In the next paragraph, we will learn how to open the web page locally on your computer.
+
+The first thing you will want to do is open the location where you have saved the repository and then you will need to find the index.html file. Once you have located this file, you will want to right click on index.html and look for the option that is called, "open with".  Whenever you highlight this option, you will be given the opportunity to open index.html in the browser of your own choice.  Once you have opened the file, you will see the feed reader, and if you scroll to the very bottom of the page, you will see the
 results of the various tests that have been performed on the project using the Jasmine testing
-suite.  
+suite.
+
+These tests can be found by following these instructions.  First you will want to open the jasmine folder. Now open the spec folder and you will find the feedreader.js file.  You will be able to open this file in the editor of your choice, or if you do not have one, it is possible to see the contents of this file in Notepad.  The tests are broken into suites. These suites consist of a describe function, which gives you a broad overview of what the tests aim to accomplish. within this describe function you will see 'it' sections that contain the actual tests. Through the comments and the code itself, it should be possible to get a good idea of what the individual tests are trying to accomplish.   
