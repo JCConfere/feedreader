@@ -66,10 +66,9 @@ $(function() {
     /* A new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
       beforeEach(function(done) {
-        loadFeed(0, function() {
-          done();
-        })
+        loadFeed(0, done);
       });
+
 
 
         /* Ensures when the loadFeed function is called and
@@ -77,38 +76,32 @@ $(function() {
          * element within the .feed container.
          */
          it('has <= 1 feed when called', function() {
-           let feed = document.querySelector('.feed')
-           expect(feed.children.length > 0).has('.entry' > 0).toBe(true);
+
+           expect($('.feed .entry').length).toBeGreaterThan(0);
          })
 
         });
 
     /* A new test suite named "New Feed Selection" */
-      describe('New Feed Selection', function() {
-        let feed = document.querySelector('.feed').innerHTML;
-        beforeEach(function(done) {
+    describe('New Feed Selection', function() {
+      let feedOne,
+          feedTwo;
+
+      beforeEach(function(done) {
+        loadFeed(0, function() {
+          feedOne = document.querySelector('.feed').innerHTML;
           loadFeed(1, function() {
-            loadFeed(2, function() {
-              done();
-            });
+            feedTwo = document.querySelector('.feed').innerHTML;
+            done();
           });
         });
-        afterEach(function() {
-          loadFeed(0);
-        });
-
-        /* Ensures when a new feed is loaded by the loadFeed
-         * function that the content actually changes.
-         */
-
-         it('changes content', function(done) {
-           expect(feed).toBeDefined
-           let feedTwo = document.querySelector('.feed');
-           expect(feedTwo).toBeDefined();
-           expect(feed).not.toEqual(feedTwo);
-         });
-
-
       });
+
+      it('content changes when new feed loads', function() {
+        expect(feedOne).toBeDefined();
+        expect(feedTwo).toBeDefined();
+        expect(feedOne).not.toBe(feedTwo);
+      });
+    });
 
 }());
